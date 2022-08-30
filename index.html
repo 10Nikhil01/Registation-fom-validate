@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Now</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+    <h1 class="display-3 heading" >Register Here</h1>
+
+    <form class="row g-2 needs-validation" novalidate>
+      <div class="col-md-4">
+        <label for="first-name" class="form-label">First name</label>
+        <input type="text" class="form-control" id="first-name" onblur="firstNameValidation()" autocomplete="off">
+        <div class="valid-feedback" id="first-name-valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" id="first-name-invalid">
+          Please enter a valid first name.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="last-name" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="last-name" onblur="lastNameValidation()" autocomplete="off">
+        <div class="valid-feedback" id="last-name-valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" id="last-name-invalid">
+          Please enter a valid lastname.
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" id="email" onblur="emailValidation()" autocomplete="off">
+          <div class="valid-feedback" id="email-valid">
+            Looks good!
+          </div>
+          <div class="invalid-feedback" id="email-invalid">
+            Please enter a valid email
+          </div>
+        </div>
+      </div>
+        <div class="col-md-4">
+          <label for="phone-number" class="form-label">Phone Number</label>
+          <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">+91</span>
+          <input type="text" id="phone-number" onblur="numberValidation()" autocomplete="off" required>
+          <div class="invalid-feedback" id="phone-number-invalid">
+            Please provide a valid Phone-number.
+          </div>
+          <div class="valid-feedback" id="phone-number-valid">
+            Looks Good!
+        </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="batch" class="form-label">Batch Number</label>
+          <input list="batches" class="form-select" id="batch" onblur="batchValidation()" autocomplete="off">
+          <datalist id="batches">
+            <option value="none" disabled>Choose...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            </datalist>
+          <div class="invalid-feedback" id="batch-invalid">
+            Please select a valid Batch No.
+          </div>
+          <div class="valid-feedback" id="batch-valid">
+            Looks Good!
+        </div>
+        </div>
+        <div class="col-md-3">
+          <label for="module" class="form-label">Current Module</label>
+          <input list="modules" class="form-select" id="module" onblur="moduleValidation()" autocomplete="off">
+          <datalist id="modules">
+            <option value="none" disabled>Choose...</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            </datalist>
+          <div class="invalid-feedback" id="module-invalid">
+            Please select a valid Module No.
+          </div>
+          <div class="valid-feedback" id="module-valid">
+            Looks Good!
+        </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tnC" onclick="tnCValidation()">
+            <label class="form-check-label" for="tnC">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback" id="tnC-invalid">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12 submit-btn">
+          <button class="btn btn-primary" type="button" onclick="validate()">Submit form</button>
+        </div>
+      </form>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+  </body>
+</html>
